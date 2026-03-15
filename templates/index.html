@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Pneumonia Detection</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🩺 AI Pneumonia Detection</h1>
+
+<p>Upload a Chest X-Ray image</p>
+
+<form method="POST" enctype="multipart/form-data">
+
+<input type="file" name="file" required>
+
+<button type="submit">Analyze X-Ray</button>
+
+</form>
+
+{% if result %}
+
+<h2>Prediction: {{ result }}</h2>
+
+<h3>Confidence: {{ confidence }}%</h3>
+
+{% endif %}
+
+{% if heatmap_path %}
+
+<h3>AI Attention Heatmap</h3>
+
+<img src="{{ heatmap_path }}" width="350">
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
