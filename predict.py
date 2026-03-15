@@ -3,7 +3,7 @@ import cv2
 from tensorflow.keras.models import load_model
 from lung_segmentation import segment_lungs
 
-# load model WITHOUT compiling
+# load model without compiling (important for deployment)
 model = load_model("model/pneumonia_resnet50.h5", compile=False)
 
 def predict_pneumonia(img_path):
